@@ -17,12 +17,112 @@ public class DemocracyBot extends TreasureBot
             clearBallots();
         }
         else{
-            //fillBallots();
+            fillBallots();
         }
+        move();
+        move();
+        if (!nextToABeeper()){
+            clearBallots();
+        }
+        else{
+            fillBallots();
+        }
+        move();
+        move();
+        if (!nextToABeeper()){
+            clearBallots();
+        }
+        else{
+            fillBallots();
+        }
+        move();
+        move();
+        if (!nextToABeeper()){
+            clearBallots();
+        }
+        else{
+            fillBallots();
+        }
+        move();
+        move();
+        if (!nextToABeeper()){
+            clearBallots();
+        }
+        else{
+            fillBallots();
+        }
+        
     }
     public void clearBallots(){
         faceNorth();
+        move();
+        if (nextToABeeper()){
+            while (nextToABeeper()){
+                    pickBeeper();
+                }
+            turnLeft();
+            turnLeft();
+            move();
+        }
+        else{
+            turnLeft();
+            turnLeft();
+            move();
+        }
+        move();
+        if (nextToABeeper()){
+            while (nextToABeeper()){
+                    pickBeeper();
+                }
+            turnLeft();
+            turnLeft();
+            move();
+        }
+        else{
+            turnLeft();
+            turnLeft();
+            move();
+        }
+        faceEast();
+    }
+    public void fillBallots(){
+        faceNorth();
+        move();
+        if (nextToABeeper()){
+              while (nextToABeeper()){
+                    pickBeeper();
+                }
+                putBeeper();
+                turnLeft();
+                turnLeft();
+                move();
+            }
         
+        else{
+            putBeeper();
+            turnLeft();
+            turnLeft();
+            move();
+        }
+        move();
+        if (nextToABeeper()){
+            
+                while (nextToABeeper()){
+                    pickBeeper();
+                }
+                putBeeper();
+                turnLeft();
+                turnLeft();
+                move();
+            }
+        
+        else{
+            putBeeper();
+            turnLeft();
+            turnLeft();
+            move();
+        } 
+        faceEast();
     }
 }
 
